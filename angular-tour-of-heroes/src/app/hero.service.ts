@@ -24,10 +24,7 @@ export class HeroService {
     /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
-      .pipe(
-        tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Hero[]>('getHeroes', []))
-      );
+      
   }
 
   /** GET hero by id. Return `undefined` when id not found */
